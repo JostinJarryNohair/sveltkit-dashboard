@@ -28,6 +28,8 @@
                      ? 'bg-blue-100 text-blue-700 font-medium' 
                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}"
           >
+          <!-- svelte:component renders a component dynamically - the component to render is
+   determined at runtime -->
             <svelte:component this={item.icon} size={20} class="mr-3" />
             {item.label}
           </a>
