@@ -90,6 +90,52 @@ export function generateTimeSeriesData(points: number = 7): TimeSeriesData[] {
   return data;
 }
 
+// Generate multi-dataset time series for comparison
+export function generateComparisonData() {
+  const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  
+  return {
+    labels,
+    datasets: [
+      {
+        label: 'This Week',
+        data: labels.map(() => getRandomValue(2000, 5000)),
+        borderColor: 'rgb(59, 130, 246)',
+        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+        tension: 0.3,
+      },
+      {
+        label: 'Last Week',
+        data: labels.map(() => getRandomValue(1500, 4500)),
+        borderColor: 'rgb(156, 163, 175)',
+        backgroundColor: 'rgba(156, 163, 175, 0.1)',
+        tension: 0.3,
+      }
+    ]
+  };
+}
+
+// Generate monthly data
+export function generateMonthlyData() {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+  
+  return {
+    labels: months,
+    datasets: [
+      {
+        label: 'Revenue',
+        data: months.map(() => getRandomValue(40000, 80000)),
+        backgroundColor: 'rgba(59, 130, 246, 0.8)',
+      },
+      {
+        label: 'Expenses',
+        data: months.map(() => getRandomValue(30000, 60000)),
+        backgroundColor: 'rgba(239, 68, 68, 0.8)',
+      }
+    ]
+  };
+}
+
 // Generate user activity data
 export interface UserActivity {
   hour: string;
