@@ -1,13 +1,14 @@
 <script>
   import { page } from '$app/stores';
+  import { HousePlus , ChartBar, DollarSign, Users } from 'lucide-svelte';
   
   $: currentPath = $page.url.pathname;
   
   const navItems = [
-    { href: '/dashboard', label: 'Overview', icon: '=Ê' },
-    { href: '/dashboard/analytics', label: 'Analytics', icon: '=È' },
-    { href: '/dashboard/revenue', label: 'Revenue', icon: '=°' },
-    { href: '/dashboard/users', label: 'Users', icon: '=e' }
+    { href: '/dashboard', label: 'Overview', icon: HousePlus },
+    { href: '/dashboard/analytics', label: 'Analytics', icon: ChartBar },
+    { href: '/dashboard/revenue', label: 'Revenue', icon: DollarSign },
+    { href: '/dashboard/users', label: 'Users', icon: Users }
   ];
 </script>
 
@@ -27,7 +28,7 @@
                      ? 'bg-blue-100 text-blue-700 font-medium' 
                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}"
           >
-            <span class="text-xl mr-3">{item.icon}</span>
+            <svelte:component this={item.icon} size={20} class="mr-3" />
             {item.label}
           </a>
         </li>
