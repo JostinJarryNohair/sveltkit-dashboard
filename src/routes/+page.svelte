@@ -73,7 +73,7 @@
     password = cred.password;
   }
   
-  // Check if already logged in
+  // onMount runs after component renders to DOM - perfect for browser-only code like localStorage
   onMount(() => {
     const user = localStorage.getItem('user');
     if (user) {
@@ -82,6 +82,8 @@
   });
 </script>
 
+
+<!-- svelte:head is used to set the title of the page ets you inject content into the head of the page -->
 <svelte:head>
   <title>Login - Dashboard</title>
 </svelte:head>

@@ -9,4 +9,6 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<!-- {@render children?.()}: Svelte 5's way to render child content (equivalent to
+   <slot /> in Svelte 4) -->
 {@render children?.()}
