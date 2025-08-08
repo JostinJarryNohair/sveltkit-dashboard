@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	let { toggleSidebar } = $props();
+
 	let currentTime = $state(new Date());
 	let user = $state<any>(null);
 
@@ -42,9 +44,20 @@
 	}
 </script>
 
-<div class="fixed top-0 left-64 right-0 z-20 flex items-center justify-between border-b border-gray-200 bg-white px-6 py-4">
-	<!-- Left side - Date/Time -->
+<div class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between border-b border-gray-200 bg-white px-4 py-4 lg:left-64 lg:px-6">
+	<!-- Left side - Mobile menu button + Date/Time -->
 	<div class="flex items-center space-x-4">
+		<!-- Mobile menu button -->
+		<button
+			class="lg:hidden rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+			onclick={toggleSidebar}
+			aria-label="Toggle sidebar"
+		>
+			<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+			</svg>
+		</button>
+
 		<div class="hidden md:block">
 			<p class="text-sm text-gray-500">{formatDate(currentTime)}</p>
 			<p class="text-xs text-gray-400">{formatTime(currentTime)}</p>
@@ -52,12 +65,12 @@
 	</div>
 
 	<!-- Center - Search bar -->
-	<div class="mx-4 max-w-md flex-1">
+	<div class="mx-2 max-w-md flex-1 sm:mx-4">
 		<div class="relative">
 			<input
 				type="text"
-				placeholder="Search dashboard..."
-				class="w-full rounded-lg border border-gray-300 py-2 pr-4 pl-10 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+				placeholder="Search..."
+				class="w-full rounded-lg border border-gray-300 py-2 pr-4 pl-10 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:placeholder:text-[Search dashboard...]"
 			/>
 			<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
 				<svg class="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,7 +86,7 @@
 	</div>
 
 	<!-- Right side - User menu and notifications -->
-	<div class="flex items-center space-x-4">
+	<div class="flex items-center space-x-2 sm:space-x-4">
 		<!-- Notifications -->
 		<button
 			class="relative rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-500"
@@ -89,9 +102,9 @@
 			<span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
 		</button>
 
-		<!-- Settings -->
+		<!-- Settings - Hidden on mobile -->
 		<button
-			class="rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-500"
+			class="hidden rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-500 sm:block"
 		>
 			<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 				<path
