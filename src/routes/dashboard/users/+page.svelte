@@ -1,5 +1,6 @@
 <script lang="ts">
 	import MetricCard from '$lib/components/dashboard/MetricCard.svelte';
+	import AddUserModal from '$lib/components/user/AddUserModal.svelte';
 	import { generateUserMetrics, generateUsers, type User } from '$lib/data/mockData';
 	import { Search, UserPlus, MoreHorizontal } from 'lucide-svelte';
 	import { onMount } from 'svelte';
@@ -12,6 +13,7 @@
 	let roleFilter = $state('All');
 	let currentPage = $state(1);
 	let usersPerPage = 10;
+	let isAddUserModalOpen = $state(false);
 
 	// Computed values using $derived
 	let totalPages = $derived(Math.ceil(filteredUsers.length / usersPerPage));
@@ -79,6 +81,18 @@
 			day: 'numeric'
 		});
 	}
+
+	function handleAddUser(newUserData: Omit<User, 'id' | 'lastActive' | 'joinDate'>) {
+		const newUser: User = {
+			id: `user-${Date.now()}`,
+			...newUserData,
+			lastActive: new Date().toISOString(),
+			joinDate: new Date().toISOString()
+		};
+
+		allUsers = [newUser, ...allUsers];
+		metrics = generateUserMetrics();
+	}
 </script>
 
 <div class="p-6">
@@ -143,6 +157,7 @@
 
 				<!-- Add User Button -->
 				<button
+					onclick={() => (isAddUserModalOpen = true)}
 					class="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
 				>
 					<UserPlus size={20} class="mr-2" />
@@ -287,3 +302,10 @@
 		{/if}
 	</div>
 </div>
+
+<!-- Add User Modal -->
+<AddUserModal
+	isOpen={isAddUserModalOpen}
+	onClose={() => (isAddUserModalOpen = false)}
+	onSubmit={handleAddUser}
+/>
