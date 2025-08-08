@@ -12,7 +12,7 @@
 	];
 </script>
 
-<nav class="flex h-full w-64 flex-col bg-white shadow-lg">
+<nav class="fixed left-0 top-0 z-30 flex h-screen w-64 flex-col bg-white shadow-lg">
 	<div class="border-b p-6">
 		<h1 class="text-xl font-bold text-gray-800">Dashboard</h1>
 	</div>

@@ -3,13 +3,11 @@
 	import Topbar from '$lib/components/dashboard/Topbar.svelte';
 </script>
 
-<div class="flex h-screen flex-col bg-gray-50">
+<div class="h-screen bg-gray-50">
 	<Topbar />
+	<Sidebar />
 
-	<div class="flex flex-1">
-		<Sidebar />
-		<main class="flex-1 overflow-auto">
-			<slot />
-		</main>
-	</div>
+	<main class="ml-64 mt-16 overflow-auto" style="height: calc(100vh - 4rem);">
+		<slot />
+	</main>
 </div>

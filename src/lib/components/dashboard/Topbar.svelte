@@ -42,7 +42,7 @@
 	}
 </script>
 
-<div class="flex items-center justify-between border-b border-gray-200 bg-white px-6 py-4">
+<div class="fixed top-0 left-64 right-0 z-20 flex items-center justify-between border-b border-gray-200 bg-white px-6 py-4">
 	<!-- Left side - Date/Time -->
 	<div class="flex items-center space-x-4">
 		<div class="hidden md:block">
