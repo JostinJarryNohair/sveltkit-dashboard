@@ -1,6 +1,6 @@
 # SvelteKit Analytics Dashboard 📊
 
-A modern, responsive analytics dashboard built with SvelteKit, TypeScript, and Tailwind CSS. This project demonstrates  SvelteKit patterns, real-time data visualization, and  UI/UX design.
+A modern, responsive analytics dashboard built with SvelteKit, TypeScript, and Tailwind CSS. This project demonstrates SvelteKit patterns, real-time data visualization, and UI/UX design.
 
 ![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -14,27 +14,31 @@ A modern, responsive analytics dashboard built with SvelteKit, TypeScript, and T
 ## ✨ Features
 
 ### 🔐 Authentication System
+
 - Mock login with multiple user roles (Admin, User, Demo)
 - Session management with localStorage
 - Protected routes with auto-redirect
 - Professional login UI with validation
 
 ### 📈 Dashboard Overview
+
 - Real-time metric cards with auto-refresh
 - Key performance indicators (KPIs)
 - Growth percentages and trend indicators
 - Responsive grid layout
 
 ### 📊 Advanced Analytics
+
 - **Interactive Charts**: Line, Bar, and Doughnut charts using Chart.js
 - **Real-time Updates**: Data refreshes every 15 seconds
 - **Period Filters**: Week, Month, Year views
 - **Comparison Views**: This week vs Last week performance
 
 ### 💰 Revenue Management
+
 - **Revenue Goal Tracking**: Visual progress bars with status indicators
 - **7-Day Forecasting**: Toggle-able revenue predictions with dashed lines
-- **Transaction Management**: 
+- **Transaction Management**:
   - Searchable and filterable transaction table
   - Status filtering (Completed, Pending, Refunded)
   - Date range filters
@@ -42,6 +46,7 @@ A modern, responsive analytics dashboard built with SvelteKit, TypeScript, and T
 - **Top Products**: Ranked product performance
 
 ### 🎨 UI/UX Features
+
 - **Dark Sidebar**: Modern gradient design with Lucide icons
 - **Top Navigation Bar**: Search, notifications, user menu
 - **Responsive Design**: Mobile-first approach
@@ -51,17 +56,20 @@ A modern, responsive analytics dashboard built with SvelteKit, TypeScript, and T
 ## 🛠️ Tech Stack
 
 ### Core
+
 - **[SvelteKit](https://kit.svelte.dev/)** - Full-stack framework
 - **[Svelte 5](https://svelte.dev/)** - Using latest runes (`$state`, `$derived`, `$effect`)
 - **[TypeScript](https://www.typescriptlang.org/)** - Type safety throughout
 - **[Vite](https://vitejs.dev/)** - Build tool and dev server
 
 ### UI & Styling
+
 - **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS
 - **[Lucide Icons](https://lucide.dev/)** - Beautiful icon library
 - **[Chart.js](https://www.chartjs.org/)** - Data visualization
 
 ### Deployment
+
 - **[Vercel](https://vercel.com/)** - Optimized for SvelteKit
 
 ## 📁 Project Structure
@@ -97,23 +105,27 @@ src/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or pnpm
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/JostinJarryNohair/sveltkit-dashboard
 cd my-svelkit-dashboard
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -124,11 +136,11 @@ npm run dev
 
 Use any of these demo accounts:
 
-| Email | Password | Role |
-|-------|----------|------|
+| Email               | Password | Role  |
+| ------------------- | -------- | ----- |
 | admin@dashboard.com | admin123 | Admin |
-| user@dashboard.com | user123 | User |
-| demo@dashboard.com | demo123 | Demo |
+| user@dashboard.com  | user123  | User  |
+| demo@dashboard.com  | demo123  | Demo  |
 
 ## 📜 Available Scripts
 
@@ -144,6 +156,7 @@ npm run format     # Format code with Prettier
 ## 🎯 Key Features Demonstrated
 
 ### SvelteKit Concepts
+
 - ✅ File-based routing with nested layouts
 - ✅ Server-side rendering (SSR) capabilities
 - ✅ Client-side navigation with `goto()`
@@ -151,6 +164,7 @@ npm run format     # Format code with Prettier
 - ✅ TypeScript integration
 
 ### Svelte 5 Runes
+
 - ✅ `$state` for reactive variables
 - ✅ `$derived` for computed values
 - ✅ `$effect` for side effects
@@ -158,6 +172,7 @@ npm run format     # Format code with Prettier
 - ✅ Modern component syntax
 
 ### Advanced Patterns
+
 - ✅ Dynamic component rendering with `svelte:component`
 - ✅ Two-way binding with `bind:` directive
 - ✅ Lifecycle hooks (`onMount`, `onDestroy`)
@@ -176,3 +191,4 @@ The project is configured for Vercel deployment with `@sveltejs/adapter-vercel`.
 - Icons by [Lucide](https://lucide.dev/)
 - Charts by [Chart.js](https://www.chartjs.org/)
 - Styled with [Tailwind CSS](https://tailwindcss.com/)
+```
